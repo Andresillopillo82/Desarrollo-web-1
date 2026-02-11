@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbeStyle | Fashion Store</title>
+   
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">URBE<span>STYLE</span></div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="filtrarProductos('Todos')">Inicio</a></li>
+                <li><a href="#" onclick="filtrarProductos('Hombres')">Hombres</a></li>
+                <li><a href="#" onclick="filtrarProductos('Mujeres')">Mujeres</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span id="cart-count">🛒 0</span>
+            </div>
+            <div class="search-container">
+    <input type="text" id="busqueda" placeholder="Buscar prendas (ej. Hoodie, Denim...)" onkeyup="buscarProducto()">
+    <span class="search-icon">🔍</span>
+</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>STREETWEAR<br><span>2026</span></h1>
+            <p>Define tu estilo, marca la diferencia.</p>
+            <a href="#productos" class="btn-main">Ver Colección</a>
+        </div>
+    </section>
+
+    <main id="productos" class="container">
+        <div class="section-title">
+            <h2>Nuestra Colección</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div id="contenedor-productos" class="product-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 UrbeStyle Studio. Diseñado para amantes de la moda.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

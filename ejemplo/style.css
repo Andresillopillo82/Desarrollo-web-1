@@ -1,0 +1,231 @@
+/* --- Configuración General --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* --- Navegación --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff4757; /* Un toque de color vibrante */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4757;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-5px);
+    background: #ff4757;
+    color: #fff;
+}
+
+/* --- Categorías --- */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem 5%;
+}
+
+.category-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.cat-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- Productos --- */
+.featured-products {
+    padding: 4rem 5%;
+}
+
+.featured-products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-item {
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff4757;
+    margin: 0.5rem 0;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 0.8rem;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background: #444;
+}
+
+/* --- Footer --- */
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Animación del carrito volador */
+.flying-cart {
+    position: fixed;
+    font-size: 2rem;
+    z-index: 9999;
+    transition: all 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Efecto de desvanecimiento cuando el producto es "atrapado" */
+.product-item.buying img {
+    filter: grayscale(1) opacity(0.5);
+    transition: 0.5s;
+    transform: scale(0.8);
+}
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--light);
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: 0 15px;
+}
+
+#busqueda {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-icon {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Para que sea responsiva en móviles */
+@media (max-width: 600px) {
+    .search-container {
+        display: none; /* Podrías ocultarla o moverla en móviles */
+    }
+}

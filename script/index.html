@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar Completo 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+        <div class="canvas-estelar">
+            <div id="escena" class="universo">
+                <div class="sol" onclick="enfocar('Sol')"></div>
+                <div id="sistema-solar"></div>
+            </div>
+        </div>
+
+        <aside class="panel-info">
+            <div class="content">
+                <h1 id="p-nombre">Explorador</h1>
+                <div class="line"></div>
+                <p id="p-descripcion">Toca un planeta para ver sus datos.</p>
+                
+                <div class="stats-box">
+                    <p><strong>Distancia:</strong> <span id="p-distancia">-</span></p>
+                    <p><strong>Dato:</strong> <span id="p-dato">-</span></p>
+                </div>
+
+                <button class="btn-reset" onclick="resetView()">Vista General</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

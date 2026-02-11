@@ -1,0 +1,112 @@
+.canvas-estelar {
+    background: #020205 url('https://www.transparenttextures.com/patterns/stardust.png');
+    /* Esto añade un poco de 'ruido' visual que parecen estrellas lejanas */
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #020205; color: white; overflow: hidden; }
+
+.main-layout { display: flex; width: 100vw; height: 100vh; }
+
+.canvas-estelar {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fondo de Galaxia Real */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Oscurece un poco la imagen */
+        url('https://images.unsplash.com/photo-1464802686167-b939a67e06a1?q=80&w=2069&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    box-shadow: inset 0 0 100px #000; /* Efecto de viñeta en los bordes */
+}
+
+/* EFECTO EXTRA: Estrellas parpadeantes */
+.canvas-estelar::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    animation: moverEstrellas 100s linear infinite;
+}
+
+@keyframes moverEstrellas {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-50%, -50%); }
+}
+
+/* Asegura que el buscador no se pierda con el fondo */
+.search-container {
+    background: rgba(20, 20, 30, 0.8) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.universo {
+    position: relative;
+    width: 1px; height: 1px;
+    /* La transición debe ser suave pero rápida para no perder al planeta */
+    transition: transform 0.1s ease-out; 
+    transform-origin: center center;
+}
+
+.sol {
+    position: absolute;
+    width: 60px; height: 60px;
+    background: radial-gradient(circle, #fff200, #ff8800);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 166, 0, 0.4);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    cursor: pointer;
+}
+
+.orbita {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: rotar linear infinite;
+}
+
+@keyframes rotar {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.planeta {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: inset -4px -4px 10px rgba(0,0,0,0.5);
+}
+
+/* Anillos de Saturno */
+.anillos-saturno {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotateX(70deg);
+    border: 4px solid rgba(194, 174, 128, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Panel Info */
+.panel-info {
+    width: 320px;
+    background: #0a0a0f;
+    border-left: 1px solid #1a1a2e;
+    padding: 30px;
+}
+
+.panel-info h1 { color: #ffcc00; font-size: 2rem; }
+.stats-box { background: #161625; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 3px solid #ffcc00; }
+.btn-reset { width: 100%; padding: 12px; background: #ffcc00; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; }
